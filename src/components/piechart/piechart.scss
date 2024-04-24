@@ -1,0 +1,55 @@
+.covid-pie-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+  
+    h2 {
+      margin-bottom: 1rem;
+    }
+  
+    .recharts-responsive-container {
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+  
+    .recharts-wrapper {
+      border-radius: 0.5rem;
+    }
+  
+    .recharts-pie {
+      .recharts-sector {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+    }
+  
+    .recharts-tooltip-wrapper {
+      .recharts-default-tooltip {
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+        border: none;
+      }
+    }
+  
+    .recharts-legend-wrapper {
+      .recharts-legend-item {
+        margin-bottom: 0.4rem;
+  
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .covid-pie-chart {
+      .recharts-responsive-container {
+        width: 90%;
+        height: auto;
+      }
+    }
+  }
+  

@@ -1,0 +1,42 @@
+// CovidTinyLineChart.scss
+.CovidTinyLineChart {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    
+    // Responsive container for the chart
+    .recharts-responsive-container {
+      margin-top: 2rem;
+    }
+  
+    h4 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  
+    // Styles for the line chart
+    .recharts-wrapper {
+      margin: auto;
+  
+      .recharts-line {
+        stroke-width: 3px; // Make the line thicker for visibility
+      }
+  
+      .recharts-tooltip-wrapper {
+        pointer-events: none; // Ensure tooltips don't block mouse events
+      }
+    }
+  }
+  
+  // Make sure the chart is responsive and fits well on different screen sizes
+  @media (max-width: 768px) {
+    .CovidTinyLineChart {
+      .recharts-responsive-container {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  }
+  

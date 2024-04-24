@@ -1,0 +1,45 @@
+// CovidTinyLineChart.scss
+.covid-tiny-line-chart {
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  
+    h4 {
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+  
+    .recharts-wrapper {
+      margin: auto;
+  
+      svg {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  }
+  
+  @media (max-width: 600px) { // Mobile devices
+    .covid-tiny-line-chart {
+      .recharts-wrapper {
+        width: 100%;
+      }
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1024px) { // Tablets
+    .covid-tiny-line-chart {
+      .recharts-wrapper {
+        width: 80%;
+      }
+    }
+  }
+  
+  @media (min-width: 1025px) { // Laptops/Desktops
+    .covid-tiny-line-chart {
+      .recharts-wrapper {
+        width: 70%;
+      }
+    }
+}
+  
