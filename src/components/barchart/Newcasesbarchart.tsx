@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import "./newcasesbarchart.scss"
 import { ApiCovidStats, MonthlyCases, ChartProps} from '../../interfaces';
 
@@ -51,16 +51,15 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
 
   return (
     <div className="covidBarChartContainer">
-      <h3>COVID-19 Cases 2020</h3>
+    <h3>COVID-19 Cases 2020</h3>
+    <ResponsiveContainer width="100%" height={400}>
       <BarChart
-        width={360}
-        height={400} 
         data={monthlyCases}
         margin={{
           top: 20,
           right: 30,
           left: 20,
-          bottom: 50, // Increased bottom margin to accommodate rotated labels
+          bottom: 50, // Maintain bottom margin for rotated labels
         }}
       >
         <XAxis dataKey="month" interval={0} angle={-45} textAnchor="end" height={70} />
@@ -69,6 +68,7 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
         <Legend />
         <Bar dataKey="newCases" fill="#8884d8" />
       </BarChart>
+      </ResponsiveContainer>
       </div>
   );
 };

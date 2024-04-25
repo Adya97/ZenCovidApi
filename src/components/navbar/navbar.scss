@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .logo {
     display: flex;
@@ -14,6 +15,7 @@
     font-weight: bold;
     gap: 10px;
   }
+
   .icons {
     display: flex;
     align-items: center;
@@ -54,6 +56,16 @@
         height: 26px;
         border-radius: 50%;
         object-fit: cover;
+      }
+    }
+    @include sm {
+      // Hide icons on small screens, except the user and notification icon
+      .icon {
+        display: none;
+      }
+      // Make sure the user and notifications are always visible
+      .notification, .user {
+        display: flex;
       }
     }
   }

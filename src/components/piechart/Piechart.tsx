@@ -48,7 +48,7 @@ const CovidPieChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
     <>
     <div className="covid-pie-chart">
     <h2>Leads by Sources</h2>  
-    <ResponsiveContainer width={300} height={300}>
+    <ResponsiveContainer width="100%" height={300}>
       <PieChart>
         <Pie
           data={pieData}  

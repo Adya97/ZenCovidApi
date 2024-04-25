@@ -5,6 +5,8 @@
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
+    width: 100%; // Container should take the full width of its parent
+
   
     h3 {
       text-align: center;
@@ -23,14 +25,14 @@
   
     .recharts-text {
         font-family: 'Helvetica', 'Arial', sans-serif;
-        fill: #ffffff; // Dark gray color for better readability
+        fill: #ffffff; 
       }
 
     .recharts-bar {
       transition: fill 0.3s ease;
        
       &:hover {
-        fill: #ffffff; // A darker shade for hover interaction
+        fill: #ffffff; 
       }
     }
   

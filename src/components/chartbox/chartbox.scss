@@ -8,7 +8,12 @@
   margin: 30px;
   padding: 20px;
   border-radius: 10px;
-  width: auto;
+  width: 100%; // Ensure the container takes the full width of its parent
+
+  @media (max-width: $sm) { // Use your breakpoint variable or a specific value like 768px
+    margin: 15px;
+    padding: 10px;
+  }
 
   h3 {
     color: #ffffff;
@@ -23,20 +28,22 @@
 
   .recharts-text {
     font-family: 'Helvetica', 'Arial', sans-serif;
-    fill: #ffffff; // Dark gray color for better readability
+    fill: #ffffff; 
   }
 
   .recharts-cartesian-axis-tick-line {
-    stroke: #ccc; // Soft color for axis ticks
+    stroke: #ccc; 
   }
 
   .recharts-tooltip-wrapper {
-    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     padding: 10px;
   }
 
   .recharts-legend-wrapper {
+    @media (max-width: $sm) {
+      margin-top: 0; // Adjust the margin top as needed for smaller screens
+    }
     padding-bottom: 1px;
     border-radius: 8px;
     margin-top: 180px;

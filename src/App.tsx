@@ -14,7 +14,6 @@ import {
 } from "react-router-dom";
 
 function App() {
-
   const Layout = ()=>{
     return(
       <div className="main">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { CovidStats, ApiCovidStats } from '../../interfaces'; 
 import "./chartbox.scss"
 
@@ -40,7 +40,8 @@ const CovidChart: React.FC = () => {
     <>
     <div className="CovidChartContainer">
       <h2>Survival Analysis</h2><br />
-      <AreaChart width={630} height={400} data={data} margin={{ top: 30, right: 10, left: 0, bottom: 40 }}>
+      <ResponsiveContainer width="100%" height={400}>
+      <AreaChart data={data} margin={{ top: 30, right: 10, left: 0, bottom: 40 }}>
         <defs>
           <linearGradient id="colorConfirmed" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -58,6 +59,7 @@ const CovidChart: React.FC = () => {
         <Area type="monotone" dataKey="confirmed" stroke="#8884d8" fillOpacity={1} fill="url(#colorConfirmed)" />
         <Area type="monotone" dataKey="deaths" stroke="#cf3821" fillOpacity={1} fill="url(#colorDeaths)" />
       </AreaChart>
+      </ResponsiveContainer>
       </div>
     </>
   );

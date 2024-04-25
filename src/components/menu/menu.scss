@@ -3,8 +3,6 @@
 
 .menu {
   .item {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 
@@ -25,12 +23,23 @@
       gap: 10px;
       padding: 10px;
       border-radius: 5px;
+      text-decoration: none; // Usually, you want to remove text decoration from links
+      color: inherit; // Ensure the color is consistent
 
       &:hover {
         background-color: $soft-bg;
       }
 
+      img {
+        width: 20px; // Example size, ensure images are not too big on small screens
+        height: auto;
+      }
+
       .listItemTitle{
+        display: block; // You may always want to display the title, adjust as needed
+        overflow: hidden; // Prevent long titles from breaking layout
+        text-overflow: ellipsis; // Add ellipsis to long titles
+        white-space: nowrap; // Keep titles on a single line
         @include lg{
           display: none;
         }

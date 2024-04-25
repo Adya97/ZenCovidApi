@@ -3,14 +3,17 @@
     flex-direction: column;
     align-items: center;
     margin: 2rem auto;
+
   
     h2 {
       margin-bottom: 1rem;
     }
   
     .recharts-responsive-container {
-      border-radius: 0.5rem;
-      overflow: hidden;
+    width: 100%; // Width set to 100% for the responsive container
+    height: 100%; // Optional: Height can be set to auto for a fully responsive height
+    border-radius: 0.5rem;
+    overflow: hidden;
     }
   
     .recharts-wrapper {
@@ -27,8 +30,6 @@
     .recharts-tooltip-wrapper {
       .recharts-default-tooltip {
         border-radius: 0.5rem;
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
         border: none;
       }
     }
@@ -42,13 +43,9 @@
         }
       }
     }
-  }
-  
-  @media (max-width: 768px) {
-    .covid-pie-chart {
-      .recharts-responsive-container {
-        width: 90%;
-        height: auto;
+    @media (max-width: 480px) {
+      .recharts-legend-wrapper .recharts-legend-item span {
+        font-size: 0.6rem; // Reduce font size for smaller screens if needed
       }
     }
   }

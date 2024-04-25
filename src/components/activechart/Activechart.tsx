@@ -39,8 +39,8 @@ const CovidTinyLineChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
   return (
     <div className="covid-tiny-line-chart">
       <h3>Total Active Cases: <br></br> {totalActive.toLocaleString()}</h3>
-      <LineChart width={300} height={100} data={data}>
-        <Tooltip />
+      <LineChart width={window.innerWidth < 768 ? window.innerWidth - 20 : 300} height={100} data={data}>
+      <Tooltip />
         <Line type="monotone" dataKey="active" stroke="#ffc658" strokeWidth={2} />
       </LineChart>
       </div>    

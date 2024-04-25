@@ -9,11 +9,17 @@
       margin-top: 2rem;
     }
   
-    h4 {
+    h3 {
       color: #ffffff;
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 1rem;
+    }
+
+    .recharts-responsive-container {
+      width: 100%; // Ensuring the chart container is fully responsive
+      height: auto; // Adjust height as needed
+      margin-top: 2rem;
     }
   
     // Styles for the line chart
@@ -28,15 +34,11 @@
         pointer-events: none; // Ensure tooltips don't block mouse events
       }
     }
-  }
-  
-  // Make sure the chart is responsive and fits well on different screen sizes
-  @media (max-width: 768px) {
-    .CovidTinyLineChart {
-      .recharts-responsive-container {
-        width: 100% !important;
-        height: auto !important;
+    @media (max-width: 480px) {
+      h3 {
+        font-size: 1rem; // Smaller font size for smaller screens
       }
     }
   }
+
   

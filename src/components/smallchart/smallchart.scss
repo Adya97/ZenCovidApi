@@ -6,9 +6,11 @@
     // Responsive container for the chart
     .recharts-responsive-container {
       margin-top: 2rem;
+      width: 100%; // Ensuring the chart container is fully responsive
+      height: 100%; 
     }
   
-    h4 {
+    h3 {
       color: #ffffff;
       font-size: 1.2rem;
       text-align: center;
@@ -29,13 +31,4 @@
     }
   }
   
-  // Make sure the chart is responsive and fits well on different screen sizes
-  @media (max-width: 768px) {
-    .CovidTinyLineChart {
-      .recharts-responsive-container {
-        width: 100% !important;
-        height: auto !important;
-      }
-    }
-  }
   
