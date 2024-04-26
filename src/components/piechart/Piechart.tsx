@@ -27,6 +27,7 @@ const CovidPieChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
     fetchData();
   }, [apiHost, apiKey]);
 
+  
   // Calculate the latest total stats
   const latestData = covidData[covidData.length - 1];
   const totalConfirmed = latestData?.confirmed ?? 0;
