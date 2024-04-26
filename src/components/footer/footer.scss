@@ -6,24 +6,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 30px;
-  flex-wrap: wrap; // Keep as is to allow wrapping on smaller screens
-  gap: 10px; // Adds a little space between items when they wrap
+  flex-wrap: wrap; 
+  gap: 10px;
 
   span {
     &:first-child {
       font-weight: bold;
-      flex: 1 100%; // Takes full width on wrap
+      flex: 1 100%;
     }
 
     &:last-child {
       font-size: 14px;
-      text-align: right; // Aligns text to the right when wrapped
-      flex: 0 auto; // Do not grow but allow shrink
+      text-align: right; 
+      flex: 0 auto; 
 
       @include sm {
-        font-size: 12px; // Slightly smaller font size on small screens
-        text-align: left; // Aligns to left on small screens if desired
-        flex: 1 100%; // Takes full width on wrap
+        font-size: 12px; 
+        text-align: left; 
+        flex: 1 100%; 
       }
     }
   }

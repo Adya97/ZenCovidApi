@@ -8,9 +8,9 @@
   margin: 30px;
   padding: 20px;
   border-radius: 10px;
-  width: 100%; // Ensure the container takes the full width of its parent
+  width: 100%; 
 
-  @media (max-width: $sm) { // Use your breakpoint variable or a specific value like 768px
+  @media (max-width: $sm) { 
     margin: 15px;
     padding: 10px;
   }

@@ -9,12 +9,11 @@
   }
 
   .chart-container {
-    width: 100%; // Chart container takes the full width of its parent
-    max-width: 600px; // Maximum width of the chart can be set as needed
+    width: 100%; 
+    max-width: 600px; 
     margin: auto;
 
     .recharts-wrapper {
-      // This ensures that the chart is responsive within the container
       svg {
         width: 100% !important;
         height: auto !important;

@@ -14,7 +14,6 @@
     flex-direction: column;
 
     @media (max-width: 768px) {
-      // For smaller screens, ensure the list stacks vertically
       flex-direction: column;
     }
 
@@ -66,12 +65,11 @@
       }
 
       @media (max-width: 768px) {
-        // On smaller screens, make each list item more compact
         flex-direction: column;
         align-items: flex-start;
 
         .user {
-          flex-direction: row; // Maintain row direction for user details
+          flex-direction: row;
         }
       }
     }

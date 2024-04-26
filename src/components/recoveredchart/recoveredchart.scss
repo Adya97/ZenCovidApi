@@ -1,12 +1,10 @@
-// CovidTinyLineChart.scss
 .CovidRocoveredChart {
     padding: 1rem;
     border-radius: 8px;
     
-    // Responsive container for the chart
     .recharts-responsive-container {
       margin-top: 2rem;
-      width: 100%; // Full width to enable responsiveness
+      width: 100%; 
       height: auto;
     }
   
@@ -17,14 +15,13 @@
       margin-bottom: 1rem;
     }
   
-    // Styles for the line chart
     .recharts-wrapper {
       .recharts-line {
-        stroke-width: 3px; // Make the line thicker for visibility
+        stroke-width: 3px; 
       }
   
       .recharts-tooltip-wrapper {
-        pointer-events: none; // Ensure tooltips don't block mouse events
+        pointer-events: none; 
       }
     }
   }

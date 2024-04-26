@@ -4,7 +4,6 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } fro
 import "./newcasesbarchart.scss"
 import { ApiCovidStats, MonthlyCases, ChartProps} from '../../interfaces';
 
-
 const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
   const [monthlyCases, setMonthlyCases] = useState<MonthlyCases[]>([]);
 
@@ -18,14 +17,13 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
           }
         });
 
-        // Initialize an object with all months set to zero for the year 2020
+        // Initializing an object with all months set to zero for the year 2020
         const monthlyData: { [key: string]: number } = {};
         for (let i = 0; i < 12; i++) {
           const month = new Date(2020, i).toLocaleString('default', { month: 'long' });
           monthlyData[month] = 0;
         }
 
-        // Aggregate confirmed cases by month for the year 2020
         response.data.stats.history
           .filter((stat: ApiCovidStats) => new Date(stat.date).getFullYear() === 2020)
           .forEach((stat: ApiCovidStats) => {
@@ -33,7 +31,7 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
             monthlyData[month] += stat.confirmed;
           });
 
-        // Convert the object into an array suitable for the chart
+        // Converting the object into an array
         setMonthlyCases(Object.entries(monthlyData).map(([month, newCases]) => ({
           month,
           newCases
@@ -46,7 +44,7 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
     fetchData();
   }, [apiHost, apiKey]);
 
-  // Formatter for Y-axis to display numbers as 'k' for thousands
+  // Y-axis to display numbers as 'k' for thousands
   const formatYAxis = (tickItem: number) => `${(tickItem / 1000).toFixed(0)}k`;
 
   return (
@@ -59,7 +57,7 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
           top: 20,
           right: 30,
           left: 20,
-          bottom: 50, // Maintain bottom margin for rotated labels
+          bottom: 50,
         }}
       >
         <XAxis dataKey="month" interval={0} angle={-45} textAnchor="end" height={70} />
@@ -68,8 +66,8 @@ const CovidBarChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
         <Legend />
         <Bar dataKey="newCases" fill="#8884d8" />
       </BarChart>
-      </ResponsiveContainer>
-      </div>
+    </ResponsiveContainer>
+   </div>
   );
 };
 

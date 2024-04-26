@@ -1,21 +1,16 @@
-import Navbar from "./components/navbar/Navbar"
-import Home from "./pages/home/Home"
-import Products from "./pages/products/Products"
-import Users from "./pages/users/Users"
-import Menu from "./components/menu/Menu"
-import Footer from "./components/footer/Footer"
-import Login from "./pages/login/Login"
-import "./styles/global.scss"
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home";
+import Products from "./pages/products/Products";
+import Users from "./pages/users/Users";
+import Menu from "./components/menu/Menu";
+import Footer from "./components/footer/Footer";
+import "./styles/global.scss";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function App() {
-  const Layout = ()=>{
-    return(
+  const Layout = () => {
+    return (
       <div className="main">
         <Navbar />
         <div className="container">
@@ -26,7 +21,7 @@ function App() {
             <Outlet />
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   };
@@ -34,30 +29,25 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element:<Layout />,
-      children:[
+      element: <Layout />,
+      children: [
         {
-          path:"/",
-          element:<Home />
+          path: "/",
+          element: <Home />,
         },
         {
-          path:"/users",
-          element:<Users />
+          path: "/users",
+          element: <Users />,
         },
         {
-          path:"/products",
-          element:<Products />
+          path: "/products",
+          element: <Products />,
         },
-      ]
+      ],
     },
-    {
-      path: "/login",
-      element: <Login/>
-    }
   ]);
 
-  return <RouterProvider router={router}/>
-  
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

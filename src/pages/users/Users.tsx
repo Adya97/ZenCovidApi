@@ -2,7 +2,7 @@ import "./users.scss"
 const users = () => {
   return (
     <div className="users">
-      users
+      <h1>Will be Added Shortly</h1>
     </div>
   )
 }

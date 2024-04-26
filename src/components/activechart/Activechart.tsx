@@ -19,13 +19,13 @@ const CovidTinyLineChart: React.FC<ChartProps> = ({ apiHost, apiKey }) => {
         });
 
         const stats = response.data.stats.history.map((item: ApiCovidStats) => ({
-          date: item.date, // Format the date if necessary
+          date: item.date, 
           active: item.confirmed - ((item.recovered ?? 0) + (item.deaths ?? 0)) // Calculate active cases
         }));
 
         setData(stats);
 
-        // Calculate the current active cases based on the last entry
+        // Calculating the current active cases
         const currentActive = stats[stats.length - 1]?.active ?? 0;
         setTotalActive(currentActive);
       } catch (error) {
